@@ -1,0 +1,9 @@
+<div class="mainbody"style="display:inline-block">
+  <p> Product: {{product.title}}</p>
+  <p>Price: $ {{product.price}}</p>
+  <p> <img style="width:200px;"*ngIf="product.url" src="{{product.url}}" alt=""> </p>
+  <button (click)="toEditProduct()"> Edit</button> 
+  <button (click)="deleteProduct()"> Delete </button> 
+
+
+</div>

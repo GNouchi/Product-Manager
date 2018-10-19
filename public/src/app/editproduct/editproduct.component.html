@@ -1,0 +1,22 @@
+<div *ngIf="product!=undefined">
+  
+<h1> Edit Product Id: {{prodid}}</h1>
+<!-- <p *ngIf="title['errors']"> Title: {{title['errors']|json}} </p>
+<p *ngIf="price['errors']"> Price: {{price['errors']|json}} </p> -->
+<p *ngIf="errors" >{{errors.message}}</p>
+
+
+
+
+<!-- Form fields -->
+<input type="text"   name="title" [(ngModel)]="product.title" placeholder="title" 
+       minlength="4" maxlength="22" required #title="ngModel" >
+<input type="number" name="price" [(ngModel)]="product.price" placeholder="price" 
+       min=1 max=15000 required #price="ngModel">
+<input type="text"   name="url"   [(ngModel)]="product.url"   placeholder="url">
+
+<p>
+    <button *ngIf="title.valid&&price.valid" class="wipe" (click)="editProduct()"> Edit </button>
+    <button class="wipe"(click)="getProduct()" style="margin-left:20px">Reset</button>
+</p>
+</div>
